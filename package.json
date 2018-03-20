@@ -1,7 +1,7 @@
 {
-  "name": "lightningstrike",
+  "name": "basicSetup",
   "version": "1.0.0",
-  "description": "Simulates a lightning strike using HTML5 Canvas",
+  "description": "A basic setup for a TypeScript based project",
   "main": "dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server --open",
