@@ -14,19 +14,19 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.css$/,
-                use: [{
-                        loader: "style-loader"
-                    },
-                    {
-                        loader: "css-loader"
-                    }
+                use: [
+                    'style-loader',
+                    'css-loader'
                 ]
             },
-            // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader"
+                use: 'ts-loader',
+                exclude: /node_modules/
             }
         ]
-    }
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
 }
