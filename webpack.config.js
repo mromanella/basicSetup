@@ -1,16 +1,12 @@
+const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
-    mode: "development",
-    devtool: "inline-source-map",
     entry: './src/index.ts',
     output: {
-        filename: './bundle.js'
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
     },
-    devServer: {
-        contentBase: "./dist",
-        compress: true,
-        port: 9000
-    },
-    watch: true,
     module: {
         rules: [{
                 test: /\.css$/,
@@ -29,4 +25,10 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
-}
+    plugins: [
+        new UglifyJsPlugin({
+            test: /\.js($|\?)/i,
+            exclude: /node_modules/
+        })
+      ]
+};
