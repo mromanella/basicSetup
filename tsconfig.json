@@ -2,14 +2,14 @@
     "compilerOptions": {
         "sourceMap": true,
         "module": "es6",
-        "outDir": "dist/",
+        "outDir": "./dist/",
         "noImplicitAny": true,
         "target": "es2017",
     },
     "include": [
-        "src/**/*"
+        "./src/**/*"
     ],
     "exclude": [
-        "node_modules",
+        "./node_modules",
     ]
 }
