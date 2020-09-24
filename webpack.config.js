@@ -4,7 +4,12 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         filename: 'bundle.js',
+        // filename: 'bundle-[contenthash].js',
         path: path.resolve(__dirname, 'dist')
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 8080
     },
     module: {
         rules: [{
@@ -23,5 +28,8 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
+    },
+    optimization: {
+        minimize: false
     }
 };
